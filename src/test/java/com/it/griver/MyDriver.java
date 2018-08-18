@@ -9,16 +9,16 @@ import java.util.List;
 import java.util.Set;
 
 public class MyDriver implements WebDriver {
-    private static MyDriver driver;
+    private static WebDriver driver;
     private MyDriver() {
     }
 
-    static MyDriver getDriver() {
+    public static MyDriver getDriver() {
         if (driver == null) {
-            driver = (MyDriver) DriverFactory.getDriver();
-            return driver;
+            driver = DriverFactory.getDriver();
+            return new MyDriver();
         }
-        return driver;
+        return new  MyDriver();
     }
 
     @Override

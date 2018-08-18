@@ -10,6 +10,8 @@ public class HomePage extends BasePage {
 
 
     public String getLabelUserEmail() {
+        driver.scrollDown();
+        driver.scrollUp();
         return labelUserEmail.getText();
     }
 
